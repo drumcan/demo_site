@@ -1,0 +1,75 @@
+<h1>Sign up</h1>
+
+<div class="container">
+  <div class="form-group">
+
+		<%= form_for @user, :html => {:class => "form-horizontal center"} do |f| %>
+		  <%= render 'shared/error_messages', object: f.object %>
+		  <%= f.label :name%>
+		  <%= f.text_field :name %>
+   
+		  <%= f.label :email %>
+		  <%= f.text_field :email %>
+
+		  <%= f.label :password %>
+		  <%= f.password_field :password %>
+
+		  <%= f.label :password_confirmation, "Confirmation" %>
+		  <%= f.password_field :password_confirmation %>
+
+      <div id="radio">
+         <input type="radio" name="plan" value="premium" checked>Premium Plan $12.99 per month<br>
+         <input type="radio" name="plan" value="basic">Basic Plan $8.99 per month<br> 
+      </div>
+      <div class="form-group">
+        
+          <div class="form-control"  id="card-number"></div>        
+          <div class="form-control"  id="expiration-date"></div>
+  		    <div class="form-control"  id="cvv"></div>
+          <div class="form-control"  id="paypal"></div>
+      </div>
+  		  
+
+    
+ 
+  	       
+		  <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+	 <% end %>
+  </div>
+</div>
+
+<script>
+
+      braintree.setup("<%= @client_token %>", 'custom', {
+        id: "new_user", 
+        paypal: {
+          container: "paypal",
+          singleUse: false,
+          amount: "100.00",
+          currency: "USD",
+          locale: "en_us"
+        },
+        hostedFields: {
+  	  		styles: {
+               "input": {
+               "color": "#3A3A3A"
+            },
+             ":focus": { color: "#333333" },
+             ".invalid": { color: "#FF0000" }
+            },
+  	  		number: {
+  	  			selector: "#card-number",
+  	  			placeholder: "41111111111111111"
+  	  		},
+  	  		cvv: {
+  	  			selector: "#cvv",
+  	  			placeholder: "CVV"
+  	  		},
+  	  		expirationDate: {
+  	  			selector: "#expiration-date",
+  	  			placeholder: "XX/XXXX"
+  	  		}
+          }
+        }
+  	  );
+    </script>
