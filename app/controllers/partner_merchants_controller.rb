@@ -22,9 +22,13 @@ def success
   result = @@gateway.oauth.create_token_from_code(
     :code => params[:code]
   )
-  p access_token = result.credentials.access_token
-  p expires_at = result.credentials.expires_at
-  p refresh_token = result.credentials.refresh_token
+
+  @partner_merchant = PartnerMerchant.new
+  @partner_merchant.merchant_id = params[:merchant_id]
+  @partner_merchant.access_token = result.credentials.access_token
+  @partner_merchant.expires_at = result.credentials.expires_at
+  @partner_merchant.refresh_token = result.credentials.refresh_token
+  @partner_merchant.save 
 end
 
 def show
