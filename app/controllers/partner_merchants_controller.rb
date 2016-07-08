@@ -26,9 +26,8 @@ def success
   @partner_merchant = PartnerMerchant.new
   @partner_merchant.merchant_id = params[:merchant_id]
   @partner_merchant.access_token = result.credentials.access_token
-  @partner_merchant.expires_at = result.credentials.expires_at
   @partner_merchant.refresh_token = result.credentials.refresh_token
-  @partner_merchant.save 
+  @partner_merchant.save
 end
 
 def show
