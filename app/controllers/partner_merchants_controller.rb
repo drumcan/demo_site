@@ -24,7 +24,7 @@ def success
   )
 
   @partner_merchant = PartnerMerchant.new
-  @partner_merchant.merchant_id = params[:merchant_id]
+  @partner_merchant.merchant_id = params[:merchantId]
   @partner_merchant.access_token = result.credentials.access_token
   @partner_merchant.refresh_token = result.credentials.refresh_token
   @partner_merchant.save
