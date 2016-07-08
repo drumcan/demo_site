@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+​
+<body>
+
+
+        <div id="bt-oauth-connect-container"></div>
+
+​
+  <script>
+  var connectUrl =  "<%= @url %>";
+  var partner = new BraintreeOAuthConnect({
+    connectUrl: connectUrl,
+    // the ID of a DOM element, a DOM node, or a jQuery object
+    container: 'bt-oauth-connect-container',
+    onError: function (errorObject) {
+      console.warn(errorObject.message);
+    }
+  });
+  </script>
+​
+​
+<footer class="footer">
+
+</footer>
+​
+​
+</body>
+</html>

@@ -1,0 +1,2 @@
+module PartnerMerchantsHelper
+end

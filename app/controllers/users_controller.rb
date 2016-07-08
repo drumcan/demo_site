@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   	@client_token = Braintree::ClientToken.generate()
   end
 
-  def create 
+  def create
   	@user = User.new(user_params)
   	@user.payment_token = token_create(params[:payment_method_nonce])
   	@subscription = subscription_create(@user.payment_token, params[:plan])
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   	  sign_in @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
-    else 
+    else
       render 'new'
     end
  end
@@ -32,13 +32,13 @@ class UsersController < ApplicationController
   end
 
 
-private 
+private
 
 def token_create(payment_nonce)
 
   @result = Braintree::Customer.create(
     :payment_method_nonce => payment_nonce)
-  
+
     if @result.success?
       return @result.customer.payment_methods[0].token
     else

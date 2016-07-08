@@ -19,3 +19,4 @@
 //= require bootstrap
 //= require bootstrap-dropdown
 //= require braintree-2.22.2.min
+//= require braintree-oauth-connect
