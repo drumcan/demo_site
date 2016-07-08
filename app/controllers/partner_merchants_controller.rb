@@ -8,7 +8,7 @@ class PartnerMerchantsController < ApplicationController
 def new
   @url = @@gateway.oauth.connect_url(
     :merchant_id => "yxb4zvxjdctbbppt",
-    :redirect_uri => "https://braintree-auth.herokuapp.com/sucess",
+    :redirect_uri => "https://braintree-auth.herokuapp.com/success",
     :scope => "grant_payment_method"
   )
   p @url
