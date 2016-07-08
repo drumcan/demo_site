@@ -19,7 +19,7 @@ def create
 end
 
 def success
-  result = gateway.oauth.create_token_from_code(
+  result = @@gateway.oauth.create_token_from_code(
     :code => params[:code]
   )
   p access_token = result.credentials.access_token
