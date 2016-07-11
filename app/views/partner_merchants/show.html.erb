@@ -3,19 +3,18 @@
 <head>
 </head>
   <body>
-    <div id="bt-oauth-connect-container"></div>
-    <script>
-      var connectUrl =  "<%= @url %>";
-      var partner = new BraintreeOAuthConnect({
-      connectUrl: connectUrl,
-      // the ID of a DOM element, a DOM node, or a jQuery object
-      container: 'bt-oauth-connect-container',
-      onError: function (errorObject) {
-      console.warn(errorObject.message);
-      }
-    });
-    </script>
-  <footer class="footer">
-  </footer>
+    <table style="width:100%">
+    	<tr>
+    		<td>merchant_id</td>
+    		<td>access_token</td>
+    		<td>refresh_token</td>
+    	</tr>
+    <% @partner_merchants.each do |merchant| %>
+      <tr>
+      	<td><%= merchant.merchant_id %></td>
+        <td><%= merchant.access_token %></td>
+        <td><%= merchant.refresh_token %></td>
+      </tr>
+    <% end %>
   </body>
 </html>

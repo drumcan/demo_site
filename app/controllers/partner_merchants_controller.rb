@@ -31,6 +31,7 @@ def success
 end
 
 def show
+  @partner_merchants = PartnerMerchant.all
 end
 
 end
