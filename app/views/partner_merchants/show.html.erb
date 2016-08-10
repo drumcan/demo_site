@@ -9,12 +9,10 @@
     		<td>access_token</td>
     		<td>refresh_token</td>
     	</tr>
-    <% @partner_merchants.each do |merchant| %>
       <tr>
-      	<td><%= merchant.merchant_id %></td>
-        <td><%= merchant.access_token %></td>
-        <td><%= merchant.refresh_token %></td>
+      	<td><%= @partner_merchant.merchant_id %></td>
+        <td><%= @partner_merchant.access_token %></td>
+        <td><%= @partner_merchant.refresh_token %></td>
       </tr>
-    <% end %>
   </body>
 </html>
