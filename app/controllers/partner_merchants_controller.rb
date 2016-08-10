@@ -19,9 +19,13 @@ def create
 end
 
 def success
+
   result = @@gateway.oauth.create_token_from_code(
     :code => params[:code]
   )
+  if :code == "error=access_denied"
+    redirect_to action: new
+  else
 
   @partner_merchant = PartnerMerchant.new
   @partner_merchant.merchant_id = params[:merchantId]
