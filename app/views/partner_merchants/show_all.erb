@@ -11,9 +11,9 @@
     	</tr>
       <% @partner_merchants.each do |partner_merchant| %>
       <tr>
-      	<td><%= @partner_merchant.merchant_id %></td>
-        <td><%= @partner_merchant.access_token %></td>
-        <td><%= @partner_merchant.refresh_token %></td>
+      	<td><%= partner_merchant.merchant_id %></td>
+        <td><%= partner_merchant.access_token %></td>
+        <td><%= partner_merchant.refresh_token %></td>
       </tr>
       <% end %>
   </body>
