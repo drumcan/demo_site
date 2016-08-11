@@ -40,4 +40,8 @@ def show
   @partner_merchant = PartnerMerchant.find(params[:id])
 end
 
+def show_all
+  @partner_merchants = PartnerMerchant.all
+end
+
 end

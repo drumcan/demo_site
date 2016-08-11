@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+  <body>
+    <table style="width:100%">
+    	<tr>
+    		<td>merchant_id</td>
+    		<td>access_token</td>
+    		<td>refresh_token</td>
+    	</tr>
+      <% @partner_merchants.each do |partner_merchant| %>
+      <tr>
+      	<td><%= @partner_merchant.merchant_id %></td>
+        <td><%= @partner_merchant.access_token %></td>
+        <td><%= @partner_merchant.refresh_token %></td>
+      </tr>
+  </body>
+</html>
