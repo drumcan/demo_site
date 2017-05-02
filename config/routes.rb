@@ -7,7 +7,7 @@ DemoSite::Application.routes.draw do
  match '/signout', to: 'sessions#destroy',         via: 'delete'
  match '/oauth',   to: 'partner_merchants#new',    via: 'get'
  match '/success', to: 'partner_merchants#success', via: 'get'
- match '/show_partner_merchant' to: 'partner_merchants#show', via: 'get'
+ match '/show_partner_merchant', to: 'partner_merchants#show', via: 'get'
  match '/show_partner_merchants', to: 'partner_merchants#show_all', via: 'get'
 
 resources :users
