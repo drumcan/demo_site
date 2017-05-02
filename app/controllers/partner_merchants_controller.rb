@@ -36,7 +36,7 @@ def success
   end
 end
 
-def show
+def show_partner_merchant
   @partner_merchant = PartnerMerchant.find(params[:id])
 end
 
