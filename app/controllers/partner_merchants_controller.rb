@@ -32,7 +32,7 @@ def success
     @partner_merchant.access_token = result.credentials.access_token
     @partner_merchant.refresh_token = result.credentials.refresh_token
     @partner_merchant.save
-    redirect_to action: "show", id: @partner_merchant.id
+    redirect_to action: "show_partner_merchant", id: @partner_merchant.id
   end
 end
 
